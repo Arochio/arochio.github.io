@@ -1,13 +1,13 @@
 // Project data
 const projects = [
     {
-        name: 'TFT-Tracker',
+        name: 'TFT Tracker',
         language: 'PHP',
         description: 'A comprehensive TFT (Teamfight Tactics) tracker application created to learn API usage and deepen knowledge in PHP development. Monitor statistics and gameplay improvements.',
         url: 'https://github.com/Arochio/TFT-Tracker'
     },
     {
-        name: 'ASCapstone',
+        name: 'Associate Capstone',
         language: 'PHP',
         description: 'Capstone project showcasing web development skills with PHP. A full-featured application demonstrating best practices in backend development.',
         url: 'https://github.com/Arochio/ASCapstone'
@@ -19,49 +19,49 @@ const projects = [
         url: 'https://github.com/Arochio/SE407'
     },
     {
-        name: 'SE256-202520',
+        name: 'SE256',
         language: 'JavaScript',
         description: 'Advanced JavaScript project with substantial codebase (215MB). Demonstrates complex frontend development techniques and interactive applications.',
-        url: 'https://github.com/Arochio/SE256-202520'
+        url: 'https://github.com/Arochio/SE256'
     },
     {
-        name: 'SE251_202520',
+        name: 'SE251',
         language: 'JavaScript',
         description: 'JavaScript coursework project focusing on DOM manipulation, event handling, and modern JavaScript practices.',
-        url: 'https://github.com/Arochio/SE251_202520'
+        url: 'https://github.com/Arochio/SE251'
     },
     {
-        name: 'SE373_Assignments',
+        name: 'SE373',
         language: 'JavaScript',
         description: 'Collection of JavaScript assignments covering various programming concepts and practical applications in web development.',
-        url: 'https://github.com/Arochio/SE373_Assignments'
+        url: 'https://github.com/Arochio/SE373-Assignments'
     },
     {
-        name: 'SE-135-Final',
+        name: 'SE-135 Final Project',
         language: 'Python',
         description: 'Final project for SE-135 coursework. Demonstrates Python programming skills and software development methodology.',
         url: 'https://github.com/Arochio/SE-135-Final'
     },
     {
-        name: 'SE135-Case-Study',
+        name: 'SE135 Case Study',
         language: 'Python',
         description: 'In-depth case study project analyzing and implementing solutions to software engineering problems using Python.',
         url: 'https://github.com/Arochio/SE135-Case-Study'
     },
     {
-        name: 'SE126_202440',
+        name: 'SE126',
         language: 'Python',
         description: 'SE126 coursework repository with comprehensive notes and Python projects exploring various programming concepts.',
-        url: 'https://github.com/Arochio/SE126_202440'
+        url: 'https://github.com/Arochio/SE126'
     },
     {
-        name: 'SE111_202440',
+        name: 'SE111',
         language: 'HTML',
         description: 'Foundation course materials and projects. Covers core web development concepts including HTML, CSS, and basic interactivity.',
-        url: 'https://github.com/Arochio/SE111_202440'
+        url: 'https://github.com/Arochio/SE111'
     },
     {
-        name: 'SE251-Final',
+        name: 'SE251 Final Project',
         language: 'HTML',
         description: 'Final project for introductory web development course showcasing HTML and responsive design principles.',
         url: 'https://github.com/Arochio/SE251-Final'
