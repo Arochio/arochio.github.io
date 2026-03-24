@@ -1,5 +1,5 @@
 // Project data
-const projects = [
+let projects = [
     {
         name: 'Prism AI Reviewer',
         language: 'JavaScript',
@@ -86,6 +86,30 @@ const projects = [
     }
 ];
 
+// Fetch latest commit date from GitHub
+async function getLatestCommitDate(repo) {
+    try {
+        const response = await fetch(`https://api.github.com/repos/Arochio/${repo}/commits?per_page=1`);
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        return new Date(data[0].commit.committer.date);
+    } catch (error) {
+        console.error(`Error fetching ${repo}:`, error);
+        return new Date(0); // Return old date if error
+    }
+}
+
+// Load projects with commit dates and sort by most recent
+async function loadProjects() {
+    const projectsWithDates = await Promise.all(projects.map(async (project) => {
+        const repo = project.url.split('/').pop();
+        const lastCommit = await getLatestCommitDate(repo);
+        return { ...project, lastCommit };
+    }));
+    projectsWithDates.sort((a, b) => b.lastCommit - a.lastCommit);
+    return projectsWithDates;
+}
+
 // Render projects
 function renderProjects(filter = 'all') {
     const grid = document.getElementById('projectsGrid');
@@ -152,8 +176,13 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // Initial render
-renderRecentProjects();
-renderProjects();
+async function init() {
+    projects = await loadProjects();
+    renderRecentProjects();
+    renderProjects();
+}
+
+init();
 
 // Smooth scrolling for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
