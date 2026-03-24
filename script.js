@@ -89,9 +89,21 @@ let projects = [
 // Fetch latest commit date from GitHub
 async function getLatestCommitDate(repo) {
     try {
-        const response = await fetch(`https://api.github.com/repos/Arochio/${repo}/commits?per_page=1`);
-        if (!response.ok) throw new Error('Failed to fetch');
+        console.log(`Fetching commits for ${repo}...`);
+        const response = await fetch(`https://api.github.com/repos/Arochio/${repo}/commits?per_page=1`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'User-Agent': 'Portfolio-Website/1.0'
+            }
+        });
+        console.log(`Response status for ${repo}:`, response.status);
+        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         const data = await response.json();
+        if (!data || data.length === 0) {
+            console.log(`No commits found for ${repo}`);
+            return new Date(0);
+        }
+        console.log(`Commit data for ${repo}:`, data[0]?.commit?.committer?.date);
         return new Date(data[0].commit.committer.date);
     } catch (error) {
         console.error(`Error fetching ${repo}:`, error);
@@ -101,12 +113,17 @@ async function getLatestCommitDate(repo) {
 
 // Load projects with commit dates and sort by most recent
 async function loadProjects() {
+    console.log('Starting to load projects...');
     const projectsWithDates = await Promise.all(projects.map(async (project) => {
         const repo = project.url.split('/').pop();
+        console.log(`Processing repo: ${repo}`);
         const lastCommit = await getLatestCommitDate(repo);
+        console.log(`Last commit for ${repo}:`, lastCommit);
         return { ...project, lastCommit };
     }));
+    console.log('All projects loaded, sorting...');
     projectsWithDates.sort((a, b) => b.lastCommit - a.lastCommit);
+    console.log('Sorted projects:', projectsWithDates.map(p => ({ name: p.name, date: p.lastCommit })));
     return projectsWithDates;
 }
 
@@ -177,9 +194,12 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 
 // Initial render
 async function init() {
+    console.log('Initializing...');
     projects = await loadProjects();
+    console.log('Projects loaded, rendering...');
     renderRecentProjects();
     renderProjects();
+    console.log('Rendering complete');
 }
 
 init();
