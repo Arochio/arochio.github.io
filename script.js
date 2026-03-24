@@ -1,6 +1,12 @@
 // Project data
 const projects = [
     {
+        name: 'Prism AI Reviewer',
+        language: 'JavaScript',
+        description: 'A GitHub webhook-based application that uses AI to automatically review pull requests. Integrates with GitHub webhooks and OpenAI API for AI-powered code reviews.',
+        url: 'https://github.com/Arochio/prism-ai-reviewer'
+    },
+    {
         name: 'TFT Tracker',
         language: 'PHP',
         description: 'A comprehensive TFT (Teamfight Tactics) tracker application created to learn API usage and deepen knowledge in PHP development. Monitor statistics and gameplay improvements.',
@@ -108,6 +114,34 @@ function renderProjects(filter = 'all') {
     });
 }
 
+// Render recent projects
+function renderRecentProjects() {
+    const grid = document.getElementById('recentGrid');
+    grid.innerHTML = '';
+
+    const recent = projects.slice(0, 3);
+
+    recent.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+                    <div class="project-header">
+                        <div class="project-name">${project.name}</div>
+                        <span class="project-language">${project.language}</span>
+                    </div>
+                    <div class="project-description">
+                        ${project.description}
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-link">
+                            <a href="${project.url}" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                        </div>
+                    </div>
+                `;
+        grid.appendChild(card);
+    });
+}
+
 // Filter functionality
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function () {
@@ -118,6 +152,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // Initial render
+renderRecentProjects();
 renderProjects();
 
 // Smooth scrolling for navigation
