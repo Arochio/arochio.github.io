@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for PRism, a GitHub App that provides automated code review. Describes how we collect, use, and protect your data.">
-    <title>PRism GitHub App - Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for PRismAI-Reviewer, a GitHub App that provides automated code review. Describes how we collect, use, and protect your data.">
+    <title>PRismAI-Reviewer GitHub App - Privacy Policy</title>
     <link rel="stylesheet" href="../style.css">
     <style>
         .legal-hero {
@@ -128,7 +128,7 @@
     <div class="legal-hero">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p class="app-name">PRism &mdash; GitHub App</p>
+            <p class="app-name">PRismAI-Reviewer &mdash; GitHub App</p>
             <p class="last-updated">Last updated: April 1, 2026</p>
         </div>
     </div>
@@ -137,28 +137,28 @@
     <div class="legal-content">
         <a href="../index.html" class="back-link">&#8592; Back to Portfolio</a>
 
-        <p class="caps-block" style="font-size: 0.85rem;">This policy applies exclusively to <strong>PRism</strong>, a GitHub App available on the GitHub Marketplace. It does not apply to this portfolio website or any other project by Cooper Graves.</p>
+        <p class="caps-block" style="font-size: 0.85rem;">This policy applies exclusively to <strong>PRismAI-Reviewer</strong>, a GitHub App available on the GitHub Marketplace. It does not apply to this portfolio website or any other project by Cooper Graves.</p>
 
         <p>This Privacy Policy describes how Cooper Graves ("we", "us", or "our") collects, uses, stores, and protects
-            information when you install and use PRism (the "Service"), a GitHub App available on the GitHub Marketplace.</p>
-        <p>By installing PRism, you agree to the practices described in this policy.</p>
+            information when you install and use PRismAI-Reviewer (the "Service"), a GitHub App available on the GitHub Marketplace.</p>
+        <p>By installing PRismAI-Reviewer, you agree to the practices described in this policy.</p>
 
         <hr class="divider">
 
         <h2>1. Information We Collect</h2>
 
         <h3>a) GitHub Installation Data</h3>
-        <p>When you install PRism through the GitHub Marketplace, GitHub provides us with:</p>
+        <p>When you install PRismAI-Reviewer through the GitHub Marketplace, GitHub provides us with:</p>
         <ul>
             <li>Your GitHub account login, account ID, and account type (user or organization)</li>
             <li>Your chosen billing plan</li>
-            <li>The list of repositories you grant PRism access to</li>
+            <li>The list of repositories you grant PRismAI-Reviewer access to</li>
         </ul>
         <p>This information is stored in our PostgreSQL database to manage your installation, enforce plan limits, and
             process billing events from GitHub Marketplace.</p>
 
         <h3>b) Pull Request and Repository Content</h3>
-        <p>When a pull request is opened or updated in a repository where PRism is installed, we receive and process:</p>
+        <p>When a pull request is opened or updated in a repository where PRismAI-Reviewer is installed, we receive and process:</p>
         <ul>
             <li>File diffs (changed lines of code) for all files in the pull request</li>
             <li>Repository file tree and related source file contents for contextual analysis</li>
@@ -174,10 +174,10 @@
             database. These embeddings are used to provide context-aware code review suggestions on future pull requests
             (Retrieval-Augmented Generation).</p>
         <p>Embeddings are stored with metadata including the repository full name and file path. Embeddings are scoped
-            to your installation and are not shared with or accessible by other PRism users.</p>
+            to your installation and are not shared with or accessible by other PRismAI-Reviewer users.</p>
 
         <h3>d) Developer Activity Profiles</h3>
-        <p>PRism maintains a per-developer activity profile based on code contributions observed across pull requests in
+        <p>PRismAI-Reviewer maintains a per-developer activity profile based on code contributions observed across pull requests in
             your repositories. This profile is stored as a vector embedding in Pinecone and contains:</p>
         <ul>
             <li>The developer's GitHub username (as the vector record ID)</li>
@@ -197,7 +197,7 @@
             usage tracking and monthly review limits.</p>
 
         <h3>g) Feedback</h3>
-        <p>If you reply to a PRism comment with a feedback command (e.g., thumbs up/down), the feedback signal is stored
+        <p>If you reply to a PRismAI-Reviewer comment with a feedback command (e.g., thumbs up/down), the feedback signal is stored
             in Pinecone to improve future analysis quality for your installation.</p>
 
         <hr class="divider">
@@ -222,19 +222,19 @@
             <li><strong>Installation records:</strong> retained while your installation is active and for 90 days after
                 deletion, then permanently deleted.</li>
             <li><strong>Vector embeddings (Pinecone):</strong> retained for the duration of your installation.
-                Embeddings are deleted when you uninstall PRism.</li>
+                Embeddings are deleted when you uninstall PRismAI-Reviewer.</li>
             <li><strong>Cached responses (Redis):</strong> cached entries expire automatically (TTL-based) and are not
                 retained beyond the cache expiry period.</li>
             <li><strong>Review event logs (PostgreSQL):</strong> retained for 12 months, then deleted.</li>
             <li><strong>Marketplace event logs:</strong> retained for 12 months, then deleted.</li>
         </ul>
-        <p>You may request deletion of your data at any time by contacting us (see Section 7). Uninstalling PRism from
+        <p>You may request deletion of your data at any time by contacting us (see Section 7). Uninstalling PRismAI-Reviewer from
             GitHub will trigger removal of your installation record and begin the deletion process for associated data.</p>
 
         <hr class="divider">
 
         <h2>4. Third-Party Services</h2>
-        <p>PRism uses the following third-party processors:</p>
+        <p>PRismAI-Reviewer uses the following third-party processors:</p>
         <ul>
             <li><a href="https://openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a> — Code diffs and
                 repository context are sent to the OpenAI API for analysis. Governed by OpenAI's API data usage
@@ -243,7 +243,7 @@
                 embeddings are stored in Pinecone. Governed by Pinecone's privacy policy.</li>
             <li><a href="https://railway.app" target="_blank" rel="noopener noreferrer">Railway</a> — The Service is
                 hosted on Railway. Your data passes through and is stored on Railway's infrastructure.</li>
-            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> — PRism operates as
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> — PRismAI-Reviewer operates as
                 a GitHub App. Data received from GitHub webhooks is subject to GitHub's privacy policy.</li>
             <li>Upstash or Redis-compatible provider — Used for response caching.</li>
         </ul>
@@ -266,7 +266,7 @@
         <hr class="divider">
 
         <h2>6. Children's Privacy</h2>
-        <p>PRism is not directed at individuals under the age of 13. We do not knowingly collect personal information
+        <p>PRismAI-Reviewer is not directed at individuals under the age of 13. We do not knowingly collect personal information
             from children. If you believe we have inadvertently collected such information, please contact us for
             immediate deletion.</p>
 
@@ -277,7 +277,7 @@
         <ul>
             <li>Request access to the personal data we hold about you</li>
             <li>Request correction or deletion of your data</li>
-            <li>Uninstall PRism at any time via GitHub App settings, which suspends data collection</li>
+            <li>Uninstall PRismAI-Reviewer at any time via GitHub App settings, which suspends data collection</li>
         </ul>
         <p>For any privacy-related requests or questions, please contact:</p>
         <p><strong>Cooper Graves</strong><br>
